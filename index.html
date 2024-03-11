@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cadre">
+        <div class="joueur1">
+            <h3>joueur 1</h3>
+            <h2 id="hold1">score</h2>
+            <div class="cumulScore"></div>
+
+        </div>
+        <div class="jeu">
+            <div class="start">
+                <button class="commencer" id="commencer" type="button" onclick="tour()">Nouvelle partie
+
+                </button>
+                <div>
+                    <p id="resultatDe"> Le résultat du dé</p>
+                </div>
+                <button class="LancerD" id="LancerD" onclick="lancerDe()"> Lancer les dés
+
+                </button>
+                <button class="Conserver" id="Conserver" type="button" onclick="mjscore()"> Conserver le score
+
+                </button>
+            </div>
+            <div class="de"></div>
+        </div>
+        <div class="joueur2">
+            <h3>joueur 1</h3>
+            <h2>score</h2>
+            <div class="cumulScore"></div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
