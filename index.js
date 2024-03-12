@@ -2,7 +2,7 @@
 let global01 = 0;
 let global02 = 0;
 let resultatD = 0;
-let tr = -1;
+let tr = 0;
 
 // lancé de dé au clique du bouton
 
@@ -14,8 +14,6 @@ function lancerDe() {
 
     //nombre de tour
     tr = tr + 1;
-    const bouton = document.getElementById('LancerD');
-    bouton.addEventListener('click', lancerDe);
     console.log("partie" + tr)
 }
 
