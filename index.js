@@ -14,7 +14,9 @@ function lancerDe() {
 
     //nombre de tour
     tr = tr + 1;
-    console.log("partie" + tr)
+    console.log("partie" + tr);
+    //afficher le nombre de point des joueur
+
 }
 
 function mjscore() {
@@ -42,10 +44,13 @@ function mjscore() {
     } else {
         console.log("Non encore gagné. Continuez à jouer !");
     }
+
+    document.getElementById("cumulScore1").innerHTML = (global01);
+    document.getElementById("cumulScore2").innerHTML = (global02);
+
 };
-
-
-
+function point() {
+}
 
 // Mettre à jour le score global en ajoutant le résultat du dé
 
