@@ -1,7 +1,8 @@
 
-let global = 0;
+let global01 = 0;
+let global02 = 0;
 let resultatD = 0;
-let tr = 0;
+let tr = -1;
 
 // lancé de dé au clique du bouton
 
@@ -15,50 +16,43 @@ function lancerDe() {
     tr = tr + 1;
     const bouton = document.getElementById('LancerD');
     bouton.addEventListener('click', lancerDe);
-    console.log(tr)
+    console.log("partie" + tr)
+}
+
+function mjscore() {
+    let a = (document.getElementById('resultatDe'));
+    // Récupérer le texte affiché dans l'élément + convertion en nombre
+    var texteAffiche = Number(a.textContent);
     //alternance des lanceurs
-    if (tr % 2 === 0) {
+    let tourJoeur = (tr % 2);
+    if (tourJoeur === 1) {
         console.log("c'est au joueur n°01 de jouer");
-        function mjscore() {
-            let a = (document.getElementById('resultatDe'));
-            // Récupérer le texte affiché dans l'élément + convertion en nombre
-            var texteAffiche = Number(a.textContent);
-            global += texteAffiche;
-            console.log("Score global :", global);
-
-            // Vérifier si le score global atteint ou dépasse 100
-            if (global >= 30) {
-                console.log("Félicitations ! Vous avez gagné !");
-                // Vous pouvez ajouter d'autres actions ici, comme afficher un message de victoire dans l'interface utilisateur.
-            } else {
-                console.log("Non encore gagné. Continuez à jouer !");
-            }
-        };
+        global01 += texteAffiche;
+        console.log("Score global01 :", global01 + "et" + tr);
+        console.log("partie" + tr);
     } else {
-        console.log("c'est au joueur n°02 de jouer")
-        function mjscore() {
-            let b = (document.getElementById('resultatDe'));
-            // Récupérer le texte affiché dans l'élément + convertion en nombre
-            var texteAffiche = Number(a.textContent);
-            global2 += texteAffiche;
-            console.log("Score global :", global2);
+        console.log("c'est au joueur n°02 de jouer");
+        global02 += texteAffiche;
+        console.log("Score global02 :", global02);
 
-            // Vérifier si le score global atteint ou dépasse 100
-            if (global2 >= 30) {
-                console.log("Félicitations ! Vous avez gagné !");
-                // Vous pouvez ajouter d'autres actions ici, comme afficher un message de victoire dans l'interface utilisateur.
-            } else {
-                console.log("Non encore gagné. Continuez à jouer !");
-            }
-        };
+    }
+
+    // Vérifier si le score global atteint ou dépasse 100
+    if (global01 >= 30) {
+        console.log("Félicitations joueur 01! Vous avez gagné !");
+        // Vous pouvez ajouter d'autres actions ici, comme afficher un message de victoire dans l'interface utilisateur.
+    } else {
+        console.log("Non encore gagné. Continuez à jouer !");
     }
 };
+
+
 
 
 // Mettre à jour le score global en ajoutant le résultat du dé
 
 
-function mjscore() {
+/**function mjscore() {
     let a = (document.getElementById('resultatDe'));
     // Récupérer le texte affiché dans l'élément + convertion en nombre
     var texteAffiche = Number(a.textContent);
@@ -73,4 +67,4 @@ function mjscore() {
         console.log("Non encore gagné. Continuez à jouer !");
     }
 };
-
+**/
