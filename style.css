@@ -9,6 +9,21 @@
     /* Ajoutez le style de la bordure */
 }
 
-.hold1 {
-    border: 2px solid blue;
+.joueur1,
+joueur2 {
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.cumulScore1 {
+    text-align: center;
+    width: 50px;
+    border: 5px solid blue;
+}
+
+.cumulScore2 {
+    text-align: center;
+    width: 50px;
+    border: 5px solid red;
 }
