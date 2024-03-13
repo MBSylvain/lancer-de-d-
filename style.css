@@ -61,3 +61,29 @@ button:hover {
     color: none;
 
 }
+
+@media only screen and (max-width: 768px) {
+
+    /* Styles pour les écrans de taille maximale de 768 pixels */
+    .cadre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+    }
+}
+
+/* Media query pour les écrans de taille minimale de 769 pixels */
+@media only screen and (min-width: 769px) {
+
+    /* Styles pour les écrans de taille minimale de 769 pixels */
+    .cadre,
+    body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+    }
+}
