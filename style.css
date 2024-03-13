@@ -1,29 +1,56 @@
 .cadre {
-    border: 2px solid black;
+    border: 3px solid rgba(221, 59, 38, 0.986);
     border-radius: 10px;
+    background-color: lightgray;
     text-align: center;
+    padding: 20px;
 }
 
-.jeu {
-    border: 2px solid red;
-    /* Ajoutez le style de la bordure */
-}
-
-.joueur1,
-joueur2 {
-    text-align: center;
-    justify-items: center;
+.start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.cumulScore1 {
+.de {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: aliceblue;
+}
+
+.joueur1,
+.joueur2 {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    width: 50px;
+    justify-items: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.joueur1 .cumulScore1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 80px;
+    height: 50px;
     border: 5px solid blue;
 }
 
 .cumulScore2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    width: 50px;
+    width: 80px;
+    height: 50px;
     border: 5px solid red;
 }
