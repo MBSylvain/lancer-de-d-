@@ -1,3 +1,8 @@
+/* Utilisation  Lato comme police par défaut */
+* {
+    font-family: 'Lato', sans-serif;
+}
+
 .cadre {
     border: 3px solid rgba(221, 59, 38, 0.986);
     border-radius: 10px;
@@ -33,29 +38,26 @@
     font-size: 20px;
 }
 
-.joueur1 .cumulScore1 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    font-size: 20px;
-    width: 80px;
-    height: 50px;
-    border: 5px solid blue;
-}
-
+.cumulScore1,
 .cumulScore2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    color: palevioletred;
     width: 80px;
     height: 50px;
-    border: 5px solid red;
 }
 
-
-img .svg {
+img.svg {
     fill: pink;
+}
+
+button,
+button:hover {
+    border: none;
+    background-color: none;
+    color: none;
+
 }
