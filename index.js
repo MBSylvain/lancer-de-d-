@@ -51,23 +51,3 @@ function mjscore() {
 };
 function point() {
 }
-
-// Mettre à jour le score global en ajoutant le résultat du dé
-
-
-/**function mjscore() {
-    let a = (document.getElementById('resultatDe'));
-    // Récupérer le texte affiché dans l'élément + convertion en nombre
-    var texteAffiche = Number(a.textContent);
-    global += texteAffiche;
-    console.log("Score global :", global);
-
-    // Vérifier si le score global atteint ou dépasse 100
-    if (global >= 30) {
-        console.log("Félicitations ! Vous avez gagné !");
-        // Vous pouvez ajouter d'autres actions ici, comme afficher un message de victoire dans l'interface utilisateur.
-    } else {
-        console.log("Non encore gagné. Continuez à jouer !");
-    }
-};
-**/
