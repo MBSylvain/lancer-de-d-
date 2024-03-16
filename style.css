@@ -1,4 +1,14 @@
+.cadre {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
 .jeu {
-    display: flex;
-    flex-direction: column;
+    border: 2px solid red;
+    /* Ajoutez le style de la bordure */
+}
+
+.hold1 {
+    border: 2px solid blue;
 }
