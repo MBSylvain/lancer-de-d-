@@ -15,8 +15,12 @@ function lancerDe() {
     //nombre de tour
     tr = tr + 1;
     console.log("partie" + tr);
-    //afficher le nombre de point des joueur
+    // Créer un élément image pour afficher la face correspondante
+    var imageDe = document.createElement('img');
+    imageDe.setAttribute('icones\dice', 'dice-' + resultatDe + '.svg');
 
+    // Ajouter l'image du dé au conteneur du dé
+    document.getElementById("resultatDe").innerHTML = (resultatD);
 }
 
 function mjscore() {
@@ -51,23 +55,3 @@ function mjscore() {
 };
 function point() {
 }
-
-// Mettre à jour le score global en ajoutant le résultat du dé
-
-
-/**function mjscore() {
-    let a = (document.getElementById('resultatDe'));
-    // Récupérer le texte affiché dans l'élément + convertion en nombre
-    var texteAffiche = Number(a.textContent);
-    global += texteAffiche;
-    console.log("Score global :", global);
-
-    // Vérifier si le score global atteint ou dépasse 100
-    if (global >= 30) {
-        console.log("Félicitations ! Vous avez gagné !");
-        // Vous pouvez ajouter d'autres actions ici, comme afficher un message de victoire dans l'interface utilisateur.
-    } else {
-        console.log("Non encore gagné. Continuez à jouer !");
-    }
-};
-**/
