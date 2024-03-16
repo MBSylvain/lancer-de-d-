@@ -17,7 +17,7 @@ function lancerDe() {
     console.log("partie" + tr);
     // Créer un élément image pour afficher la face correspondante
     var imageDe = document.createElement('img');
-    imageDe.setAttribute('icones\dice', 'dice-' + resultatDe + '.svg');
+    imageDe.setAttribute('icones\dice' + 'dice-' + resultatDe + '.svg');
 
     // Ajouter l'image du dé au conteneur du dé
     document.getElementById("resultatDe").innerHTML = (resultatD);
@@ -53,5 +53,3 @@ function mjscore() {
     document.getElementById("cumulScore2").innerHTML = (global02);
 
 };
-function point() {
-}
