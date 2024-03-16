@@ -34,7 +34,6 @@ function mjscore() {
         console.log("c'est au joueur n°02 de jouer");
         global02 += texteAffiche;
         console.log("Score global02 :", global02);
-
     }
 
     // Vérifier si le score global atteint ou dépasse 100
@@ -44,10 +43,8 @@ function mjscore() {
     } else {
         console.log("Non encore gagné. Continuez à jouer !");
     }
-
     document.getElementById("cumulScore1").innerHTML = (global01);
     document.getElementById("cumulScore2").innerHTML = (global02);
-
 };
 function point() {
 }
