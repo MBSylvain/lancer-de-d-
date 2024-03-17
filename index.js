@@ -10,19 +10,28 @@ function lancerDe() {
     let resultatD = Math.floor(Math.random() * 6) + 1;
     console.log(resultatD);
     //Affiche la valeur du dé
-    document.getElementById("resultatDe").innerHTML = (resultatD);
+    //document.getElementById("resultatDe").innerHTML = (resultatD);
 
     //nombre de tour
     tr = tr + 1;
     console.log("partie" + tr);
-    //afficher le nombre de point des joueur
-
+    // Création de l'élément image
+    var image = document.createElement('img');
+    // Définition de l'attribut src de l'image
+    image.src = 'dice/dice-' + resultatD + '.svg';
+    // Définition de l'attribut alt de l'image
+    image.alt = "Nom de l'image";
+    image.width = '60';
+    image.height = '60';
+    // Insertion de l'image dans le document
+    document.getElementById("resultatDe").appendChild(image);
 }
 
 function mjscore() {
     let a = (document.getElementById('resultatDe'));
     // Récupérer le texte affiché dans l'élément + convertion en nombre
     var texteAffiche = Number(a.textContent);
+
     //alternance des lanceurs
     let tourJoeur = (tr % 2);
     if (tourJoeur === 1) {
@@ -35,7 +44,6 @@ function mjscore() {
         global02 += texteAffiche;
         console.log("Score global02 :", global02);
     }
-
     // Vérifier si le score global atteint ou dépasse 100
     if (global01 >= 30) {
         console.log("Félicitations joueur 01! Vous avez gagné !");
@@ -46,5 +54,19 @@ function mjscore() {
     document.getElementById("cumulScore1").innerHTML = (global01);
     document.getElementById("cumulScore2").innerHTML = (global02);
 };
-function point() {
+function afficher() {
+    let ade = document.getElementById('resultatDe');
+    // Récupérer le texte affiché dans l'élément + conversion en nombre
+    var texteAfficheDe = parseInt(ade.textContent.trim());
+
+    // Création de l'élément image
+    var image = document.createElement("img");
+    // Définition de l'attribut src de l'image
+    image.src = 'dice/dice-' + texteAfficheDe + '.svg';
+    console.log(image.src)
+    // Définition de l'attribut alt de l'image
+    image.alt = "Nom de l'image";
+    // Insertion de l'image dans le document
+    document.getElementById("resultatDe").appendChild(image);
 }
+
