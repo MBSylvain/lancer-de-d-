@@ -3,46 +3,46 @@ let global01 = 0;
 let global02 = 0;
 let resultatD = 0;
 let tr = 0;
+let point = 0;
 
-// lancé de dé au clique du bouton
-
+// lancé de dé au clique du bouton lancer les dés
 function lancerDe() {
-    let resultatD = Math.floor(Math.random() * 6) + 1;
+    resultatD = Math.floor(Math.random() * 6) + 1;
     console.log(resultatD);
-    //Affiche la valeur du dé
-    //document.getElementById("resultatDe").innerHTML = (resultatD);
-
-    //nombre de tour
-    tr = tr + 1;
-    console.log("partie" + tr);
+}
+// Fonction pour mettre à jour l'affichage de l'image du dé
+function afficherImageDe() {
+    // Supprimer l'ancienne image du dé
+    var ancienneImage = document.getElementById("de").querySelector("img");
+    if (ancienneImage) {
+        ancienneImage.remove();
+    }
     // Création de l'élément image
     var image = document.createElement('img');
     // Définition de l'attribut src de l'image
     image.src = 'dice/dice-' + resultatD + '.svg';
     // Définition de l'attribut alt de l'image
-    image.alt = "Nom de l'image";
+    image.alt = "dé";
     image.width = '60';
     image.height = '60';
     // Insertion de l'image dans le document
-    document.getElementById("resultatDe").appendChild(image);
+    document.getElementById("de").appendChild(image);
+
 }
 
 function mjscore() {
-    let a = (document.getElementById('resultatDe'));
-    // Récupérer le texte affiché dans l'élément + convertion en nombre
-    var texteAffiche = Number(a.textContent);
 
     //alternance des lanceurs
+    tr = tr + 1;
+    console.log("partie" + tr);
     let tourJoeur = (tr % 2);
     if (tourJoeur === 1) {
         console.log("c'est au joueur n°01 de jouer");
-        global01 += texteAffiche;
+        global01 += resultatD;
         console.log("Score global01 :", global01 + "et" + tr);
-        console.log("partie" + tr);
     } else {
         console.log("c'est au joueur n°02 de jouer");
-        global02 += texteAffiche;
-        console.log("Score global02 :", global02);
+        global02 += resultatD;
     }
     // Vérifier si le score global atteint ou dépasse 100
     if (global01 >= 30) {
@@ -53,20 +53,21 @@ function mjscore() {
     }
     document.getElementById("cumulScore1").innerHTML = (global01);
     document.getElementById("cumulScore2").innerHTML = (global02);
-};
-function afficher() {
-    let ade = document.getElementById('resultatDe');
-    // Récupérer le texte affiché dans l'élément + conversion en nombre
-    var texteAfficheDe = parseInt(ade.textContent.trim());
 
-    // Création de l'élément image
-    var image = document.createElement("img");
-    // Définition de l'attribut src de l'image
-    image.src = 'dice/dice-' + texteAfficheDe + '.svg';
-    console.log(image.src)
-    // Définition de l'attribut alt de l'image
-    image.alt = "Nom de l'image";
-    // Insertion de l'image dans le document
-    document.getElementById("resultatDe").appendChild(image);
+};
+// Fonction principale pour gérer un tour de jeu
+function tourDeJeu() {
+    let resultatD = lancerDe();
+    console.log("Résultat du lancer de dé :", resultatD);
+    afficherImageDe(resultatD);
+    miseAJourScore(resultatD);
 }
 
+function reinitialiserScores() {
+    global01 = 0;
+    global02 = 0;
+    tr = 0;
+    document.getElementById("cumulScore1").innerHTML = global01;
+    document.getElementById("cumulScore2").innerHTML = global02;
+    console.log("Scores réinitialisés à zéro.");
+}

@@ -22,15 +22,16 @@
         </div>
         <div class="jeu">
             <div class="start">
-                <button class="commencer" id="commencer" type="button" onclick="tour()">
+                <button class="commencer" id="commencer" type="button" onclick="reinitialiserScores()">
                     <img class="svg" src="icones\add_circle_FILL0_wght400_GRAD0_opsz24.svg"> Nouvelle
                     partie
 
                 </button>
-                <div class="de">
-                    <p id="resultatDe"> </p>
+                <div class="de" id="de" onclick="">
+                    <p id="resultatDe">
+                    </p>
                 </div>
-                <button class="LancerD" id="LancerD" onclick="lancerDe()"> <img class="svg"
+                <button class="LancerD" id="LancerD" onclick="lancerDe(); afficherImageDe()"> <img class="svg"
                         src="icones\cached_FILL0_wght400_GRAD0_opsz24.svg">Lancer les dés
 
                 </button>
