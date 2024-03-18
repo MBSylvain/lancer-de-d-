@@ -66,8 +66,8 @@ img.svg {
 button,
 button:hover {
     border: none;
-    background-color: none;
-    color: none;
+    background-color: transparent;
+    cursor: default;
     margin-top: 20px;
 }
 

@@ -3,12 +3,34 @@ let global01 = 0;
 let global02 = 0;
 let resultatD = 0;
 let tr = 0;
-let point = 0;
+let pointTemp1 = 0;
+let pointTemp2 = 0;
 
 // lancé de dé au clique du bouton lancer les dés
 function lancerDe() {
     resultatD = Math.floor(Math.random() * 6) + 1;
     console.log(resultatD);
+    //alternance des lanceurs
+    let tourJoeur = (tr % 2);
+    if (tourJoeur === 1) {
+        pointTemp1 += resultatD;
+        if (resultatD === 1) {
+            pointTemp1 = 0;
+            tr = tr + 1;
+        }
+    }
+
+    else {
+        pointTemp2 += resultatD;
+        if (resultatD === 1) {
+            pointTemp2 = 0;
+            tr = tr + 1;
+        }
+
+    }
+    //afficher du pointTemp
+    document.getElementById("cumulScore12").innerHTML = (pointTemp1);
+    document.getElementById("cumulScore22").innerHTML = (pointTemp2);
 }
 // Fonction pour mettre à jour l'affichage de l'image du dé
 function afficherImageDe() {
@@ -27,7 +49,6 @@ function afficherImageDe() {
     image.height = '60';
     // Insertion de l'image dans le document
     document.getElementById("de").appendChild(image);
-
 }
 
 function mjscore() {
