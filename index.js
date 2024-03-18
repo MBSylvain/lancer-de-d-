@@ -54,17 +54,24 @@ function afficherImageDe() {
 function mjscore() {
 
     //alternance des lanceurs
-    tr = tr + 1;
+    //tr = tr + 1;
     console.log("partie" + tr);
     let tourJoeur = (tr % 2);
     if (tourJoeur === 1) {
         console.log("c'est au joueur n°01 de jouer");
-        global01 += resultatD;
+        global01 += pointTemp1;
+        pointTemp1 = 0
         console.log("Score global01 :", global01 + "et" + tr);
     } else {
         console.log("c'est au joueur n°02 de jouer");
-        global02 += resultatD;
+        global02 += pointTemp2;
+        pointTemp2 = 0
     }
+    tr = tr + 1;
+    document.getElementById("cumulScore12").innerHTML = (pointTemp1);
+    document.getElementById("cumulScore22").innerHTML = (pointTemp2);
+
+
     // Vérifier si le score global atteint ou dépasse 100
     if (global01 >= 30) {
         console.log("Félicitations joueur 01! Vous avez gagné !");
@@ -87,8 +94,12 @@ function tourDeJeu() {
 function reinitialiserScores() {
     global01 = 0;
     global02 = 0;
+    let pointTemp1 = 0;
+    let pointTemp2 = 0;
     tr = 0;
     document.getElementById("cumulScore1").innerHTML = global01;
     document.getElementById("cumulScore2").innerHTML = global02;
+    document.getElementById("cumulScore12").innerHTML = (pointTemp1);
+    document.getElementById("cumulScore22").innerHTML = (pointTemp2);
     console.log("Scores réinitialisés à zéro.");
 }
