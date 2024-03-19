@@ -13,18 +13,25 @@ function lancerDe() {
     //alternance des lanceurs
     let tourJoeur = (tr % 2);
     if (tourJoeur === 1) {
+        document.getElementById("JoueurN1").style.display = "inline-block";
+        document.getElementById("JoueurN2").style.display = "none";
         pointTemp1 += resultatD;
         if (resultatD === 1) {
             pointTemp1 = 0;
             tr = tr + 1;
+            // joueur en cours
+
         }
     }
 
     else {
+        document.getElementById("JoueurN1").style.display = "none";
+        document.getElementById("JoueurN2").style.display = "inline-block";
         pointTemp2 += resultatD;
         if (resultatD === 1) {
             pointTemp2 = 0;
             tr = tr + 1;
+
         }
 
     }
@@ -62,10 +69,12 @@ function mjscore() {
         global01 += pointTemp1;
         pointTemp1 = 0
         console.log("Score global01 :", global01 + "et" + tr);
+
     } else {
         console.log("c'est au joueur n°02 de jouer");
         global02 += pointTemp2;
-        pointTemp2 = 0
+        pointTemp2 = 0;
+
     }
     tr = tr + 1;
     document.getElementById("cumulScore12").innerHTML = (pointTemp1);
