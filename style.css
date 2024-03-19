@@ -12,7 +12,7 @@ body {
 .cadre {
     border: 3px solid rgba(221, 59, 38, 0.986);
     border-radius: 10px;
-    background-color: lightgray;
+    background-color: rgb(235, 228, 228);
     text-align: center;
     padding: 20px;
 }
@@ -59,6 +59,15 @@ body {
     height: 50px;
 }
 
+.cumulScore12,
+.cumulScore22 {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    font-size: 20px;
+    color: white;
+}
+
 img.svg {
     fill: pink;
 }
@@ -71,11 +80,6 @@ button:hover {
     margin-top: 20px;
 }
 
-#JoueurN1,
-#joueurN2 {
-    border-radius: 20px;
-    border: 1px solid black;
-}
 
 
 @media only screen and (max-width: 768px) {
