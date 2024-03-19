@@ -84,8 +84,15 @@ function mjscore() {
     // Vérifier si le score global atteint ou dépasse 100
     if (global01 >= 30) {
         console.log("Félicitations joueur 01! Vous avez gagné !");
-        // Vous pouvez ajouter d'autres actions ici, comme afficher un message de victoire dans l'interface utilisateur.
-    } else {
+        document.getElementById("win1").innerHTML = ("gagné");
+
+    }
+    if (global02 >= 30) {
+        console.log("Félicitations joueur 01! Vous avez gagné !");
+        document.getElementById("win2").innerHTML = ("gagné");
+
+    }
+    else {
         console.log("Non encore gagné. Continuez à jouer !");
     }
     document.getElementById("cumulScore1").innerHTML = (global01);

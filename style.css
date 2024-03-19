@@ -61,11 +61,14 @@ body {
 
 .cumulScore12,
 .cumulScore22 {
+    display: flex;
+    flex-direction: column;
     width: 60px;
     height: 60px;
     background-color: red;
     font-size: 20px;
     color: white;
+    justify-content: center;
 }
 
 img.svg {
@@ -80,6 +83,12 @@ button:hover {
     margin-top: 20px;
 }
 
+.win1,
+.win2 {
+    width: 60px;
+    height: 30px;
+    font-size: 25px;
+}
 
 
 @media only screen and (max-width: 768px) {
