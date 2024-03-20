@@ -19,7 +19,7 @@ body {
 .cadre {
     width: 100%;
     height: 100%;
-    border: 10px solid rgba(221, 59, 38, 0.986);
+    border: 15px solid rgba(221, 59, 38, 0.986);
     border-radius: 10px;
     background-color: rgb(235, 228, 228);
     text-align: center;
