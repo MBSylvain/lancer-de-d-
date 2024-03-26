@@ -37,6 +37,3 @@ Le premier joueur qui atteint les 100 points sur GLOBAL gagne le jeu.
 
 Les contributions sont les bienvenues ! Si vous souhaitez améliorer le jeu ou corriger des bogues, veuillez soumettre une demande d'extraction avec vos modifications.
 
-## Licence
-
-Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT).
