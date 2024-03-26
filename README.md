@@ -26,7 +26,7 @@ Le premier joueur qui atteint les 100 points sur GLOBAL gagne le jeu.
 
 ## Utilisation
 
-1. Accédez au jeu en ligne en visitant l'URL suivante : www. 
+1. Accédez au jeu en ligne en visitant l'URL suivante : https://jeu-de-lancer-d-bac49daae7d5.herokuapp.com/
 2. Suivez les instructions à l'écran pour jouer.
 3. À tour de rôle, cliquez sur le bouton "Lancer le dé" pour ajouter des points à votre ROUND.
 4. Vous pouvez à tout moment cliquer sur le bouton "Hold" pour ajouter les points du ROUND à votre score GLOBAL.
