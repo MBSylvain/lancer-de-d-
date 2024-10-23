@@ -1,121 +1,112 @@
+// Déclaration des variables globales
+let scoreGlobalJoueur1 = 0;
+let scoreGlobalJoueur2 = 0;
+let resultatDe = 0;
+let tour = 0;
+let scoreTemporaireJoueur1 = 0;
+let scoreTemporaireJoueur2 = 0;
 
-let global01 = 0;
-let global02 = 0;
-let resultatD = 0;
-let tr = 0;
-let pointTemp1 = 0;
-let pointTemp2 = 0;
-
-// lancé de dé au clique du bouton lancer les dés
+// Fonction pour lancer le dé lors du clic sur le bouton "Lancer les dés"
 function lancerDe() {
-    resultatD = Math.floor(Math.random() * 6) + 1;
-    console.log(resultatD);
-    //alternance des lanceurs
-    let tourJoeur = (tr % 2);
-    if (tourJoeur === 1) {
-        document.getElementById("JoueurN1").style.display = "inline-block";
-        document.getElementById("JoueurN2").style.display = "none";
-        pointTemp1 += resultatD;
-        if (resultatD === 1) {
-            pointTemp1 = 0;
-            tr = tr + 1;
-            // joueur en cours
-
-        }
+  resultatDe = Math.floor(Math.random() * 6) + 1;
+  // Alternance des joueurs
+  let tourJoueur = tour % 2;
+  if (tourJoueur === 1) {
+    document.getElementById("JoueurN1").style.display = "inline-block";
+    document.getElementById("JoueurN2").style.display = "none";
+    scoreTemporaireJoueur1 += resultatDe;
+    if (resultatDe === 1) {
+      scoreTemporaireJoueur1 = 0;
+      tour += 1;
     }
-
-    else {
-        document.getElementById("JoueurN1").style.display = "none";
-        document.getElementById("JoueurN2").style.display = "inline-block";
-        pointTemp2 += resultatD;
-        if (resultatD === 1) {
-            pointTemp2 = 0;
-            tr = tr + 1;
-
-        }
-
+  } else {
+    document.getElementById("JoueurN1").style.display = "none";
+    document.getElementById("JoueurN2").style.display = "inline-block";
+    scoreTemporaireJoueur2 += resultatDe;
+    if (resultatDe === 1) {
+      scoreTemporaireJoueur2 = 0;
+      tour += 1;
     }
-    //afficher du pointTemp
-    document.getElementById("cumulScore12").innerHTML = (pointTemp1);
-    document.getElementById("cumulScore22").innerHTML = (pointTemp2);
+  }
+  // Affichage du score temporaire
+  document.getElementById("cumulScoreTemporaireJoueur1").innerHTML =
+    scoreTemporaireJoueur1;
+  document.getElementById("cumulScoreTemporaireJoueur2").innerHTML =
+    scoreTemporaireJoueur2;
 }
+
 // Fonction pour mettre à jour l'affichage de l'image du dé
 function afficherImageDe() {
-    // Supprimer l'ancienne image du dé
-    var ancienneImage = document.getElementById("de").querySelector("img");
-    if (ancienneImage) {
-        ancienneImage.remove();
-    }
-    // Création de l'élément image
-    var image = document.createElement('img');
-    // Définition de l'attribut src de l'image
-    image.src = 'dice/dice-' + resultatD + '.svg';
-    // Définition de l'attribut alt de l'image
-    image.alt = "dé";
-    image.width = '60';
-    image.height = '60';
-    // Insertion de l'image dans le document
-    document.getElementById("de").appendChild(image);
+  // Supprimer l'ancienne image du dé
+  var ancienneImage = document.getElementById("de").querySelector("img");
+  if (ancienneImage) {
+    ancienneImage.remove();
+  }
+  // Création de l'élément image
+  var image = document.createElement("img");
+  // Définition de l'attribut src de l'image
+  image.src = "dice/dice-" + resultatDe + ".svg";
+  // Définition de l'attribut alt de l'image
+  image.alt = "dé";
+  image.width = "60";
+  image.height = "60";
+  // Insertion de l'image dans le document
+  document.getElementById("de").appendChild(image);
 }
 
-function mjscore() {
+// Fonction pour mettre à jour le score
+function mettreAJourScore() {
+  let tourJoueur = tour % 2;
+  if (tourJoueur === 1) {
+    scoreGlobalJoueur1 += scoreTemporaireJoueur1;
+    scoreTemporaireJoueur1 = 0;
+  } else {
+    scoreGlobalJoueur2 += scoreTemporaireJoueur2;
+    scoreTemporaireJoueur2 = 0;
+  }
+  tour += 1;
+  document.getElementById("cumulScoreTemporaireJoueur1").innerHTML =
+    scoreTemporaireJoueur1;
+  document.getElementById("cumulScoreTemporaireJoueur2").innerHTML =
+    scoreTemporaireJoueur2;
 
-    //alternance des lanceurs
-    //tr = tr + 1;
-    console.log("partie" + tr);
-    let tourJoeur = (tr % 2);
-    if (tourJoeur === 1) {
-        console.log("c'est au joueur n°01 de jouer");
-        global01 += pointTemp1;
-        pointTemp1 = 0
-        console.log("Score global01 :", global01 + "et" + tr);
+  // Vérifier si le score global atteint ou dépasse 30
+  if (scoreGlobalJoueur1 >= 30) {
+    document.getElementById("win1").innerHTML = "Bravo vous avez gagné";
+    document.getElementById("LancerD").style.display = "none";
+  }
+  if (scoreGlobalJoueur2 >= 30) {
+    document.getElementById("win2").innerHTML = "Bravo vous avez gagné";
+    document.getElementById("LancerD").style.display = "none";
+  } else {
+    console.log("Pas encore gagné. Continuez à jouer !");
+  }
+  document.getElementById("cumulScoreJoueur1").innerHTML = scoreGlobalJoueur1;
+  document.getElementById("cumulScoreJoueur2").innerHTML = scoreGlobalJoueur2;
+}
 
-    } else {
-        console.log("c'est au joueur n°02 de jouer");
-        global02 += pointTemp2;
-        pointTemp2 = 0;
-
-    }
-    tr = tr + 1;
-    document.getElementById("cumulScore12").innerHTML = (pointTemp1);
-    document.getElementById("cumulScore22").innerHTML = (pointTemp2);
-
-
-    // Vérifier si le score global atteint ou dépasse 100
-    if (global01 >= 30) {
-        console.log("Félicitations joueur 01! Vous avez gagné !");
-        document.getElementById("win1").innerHTML = ("gagné");
-
-    }
-    if (global02 >= 30) {
-        console.log("Félicitations joueur 01! Vous avez gagné !");
-        document.getElementById("win2").innerHTML = ("gagné");
-
-    }
-    else {
-        console.log("Non encore gagné. Continuez à jouer !");
-    }
-    document.getElementById("cumulScore1").innerHTML = (global01);
-    document.getElementById("cumulScore2").innerHTML = (global02);
-
-};
 // Fonction principale pour gérer un tour de jeu
 function tourDeJeu() {
-    let resultatD = lancerDe();
-    console.log("Résultat du lancer de dé :", resultatD);
-    afficherImageDe(resultatD);
-    miseAJourScore(resultatD);
+  let resultatDe = lancerDe();
+  afficherImageDe(resultatDe);
+  mettreAJourScore(resultatDe);
 }
 
+// Fonction pour réinitialiser les scores
 function reinitialiserScores() {
-    global01 = 0;
-    global02 = 0;
-    let pointTemp1 = 0;
-    let pointTemp2 = 0;
-    tr = 0;
-    document.getElementById("cumulScore1").innerHTML = global01;
-    document.getElementById("cumulScore2").innerHTML = global02;
-    document.getElementById("cumulScore12").innerHTML = (pointTemp1);
-    document.getElementById("cumulScore22").innerHTML = (pointTemp2);
-    console.log("Scores réinitialisés à zéro.");
+  scoreGlobalJoueur1 = 0;
+  scoreGlobalJoueur2 = 0;
+  scoreTemporaireJoueur1 = 0;
+  scoreTemporaireJoueur2 = 0;
+  tour = 0;
+  document.getElementById("cumulScoreJoueur1").innerHTML = scoreGlobalJoueur1;
+  document.getElementById("cumulScoreJoueur2").innerHTML = scoreGlobalJoueur2;
+  document.getElementById("cumulScoreTemporaireJoueur1").innerHTML =
+    scoreTemporaireJoueur1;
+  document.getElementById("cumulScoreTemporaireJoueur2").innerHTML =
+    scoreTemporaireJoueur2;
+  document.getElementById("win1").innerHTML = "";
+  document.getElementById("win2").innerHTML = "";
+  document.getElementById("win2").remove.innerHTML = "";
+  document.getElementById("LancerD").style.display = "inline-block";
 }
