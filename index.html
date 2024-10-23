@@ -17,16 +17,16 @@
     <div class="cadre">
         <div class="joueur1">
             <p id="win1"></p>
-            <h3>Joueur 1<div id="JoueurN1"><img class="svg" src="icones\circle-fill.svg"></div>
+            <h3>Joueur 1<div id="JoueurN1"><img class="svg" src="icones/circle-fill.svg"></div>
             </h3>
-            <div class="cumulScore1" id="cumulScore1"></div>
-            <div class="cumulScore12" id="cumulScore12"></div>
+            <div class="cumulScore1" id="cumulScoreJoueur1"></div>
+            <div class="cumulScore12" id="cumulScoreTemporaireJoueur1"></div>
 
         </div>
         <div class="jeu">
             <div class="start">
-                <button class="commencer" id="commencer" type="button" onclick="reinitialiserScores()">
-                    <img class="svg" src="icones\add_circle_FILL0_wght400_GRAD0_opsz24.svg"> Nouvelle
+                <button class="commencer" id="commencer" type="button" onclick=reinitialiserScores()>
+                    <img class="svg" src="icones/add_circle_FILL0_wght400_GRAD0_opsz24.svg"> Nouvelle
                     partie
 
                 </button>
@@ -35,11 +35,11 @@
                     </p>
                 </div>
                 <button class="LancerD" id="LancerD" onclick="lancerDe(); afficherImageDe()"> <img class="svg"
-                        src="icones\cached_FILL0_wght400_GRAD0_opsz24.svg">Lancer les dés
+                        src="icones/cached_FILL0_wght400_GRAD0_opsz24.svg">Lancer les dés
 
                 </button>
-                <button class="Conserver" id="Conserver" type="button" onclick="mjscore()"><img class="svg"
-                        src="icones\system_update_alt_FILL0_wght400_GRAD0_opsz24.svg"> Conserver le score
+                <button class="Conserver" id="Conserver" type="button" onclick=mettreAJourScore()><img class="svg"
+                        src="icones/system_update_alt_FILL0_wght400_GRAD0_opsz24.svg"> Conserver le score
 
                 </button>
             </div>
@@ -48,13 +48,13 @@
         <div class="joueur2">
             <p id="win2"></p>
 
-            <h3>Joueur 2 <div id="JoueurN2"><img class="svg" src="icones\circle-fill.svg"></div>
+            <h3>Joueur 2 <div id="JoueurN2"><img class="svg" src="icones/circle-fill.svg"></div>
             </h3>
-            <div class="cumulScore2" id="cumulScore2"></div>
-            <div class="cumulScore22" id="cumulScore22"></div>
+            <div class="cumulScore2" id="cumulScoreJoueur2"></div>
+            <div class="cumulScore22" id="cumulScoreTemporaireJoueur2"></div>
 
         </div>
-
+        <div class="rejouer" id="rejouer"></div>
     </div>
     <script src="index.js"></script>
 
